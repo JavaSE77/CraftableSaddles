@@ -1,0 +1,17 @@
+name: CraftableSaddles
+author: JavaSE
+version: 1.5
+description: you can craft saddles!
+main: club.hardcoreminecraft.javase.craftablesaddles.main
+api-version: 1.15
+permissions:
+  CraftableSadles.saddle:
+    default: true
+  CraftableSadles.NameTag:
+    default: true
+  CraftableSadles.GoldHorseArmor:
+    default: true
+  CraftableSadles.IronHorseArmor:
+    default: true
+  CraftableSadles.DiamondHorseArmor:
+    default: true
