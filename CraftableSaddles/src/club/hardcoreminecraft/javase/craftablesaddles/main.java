@@ -17,8 +17,14 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class main extends JavaPlugin implements Listener {
+	/*
+	 * THE WAY CRAFTING WORKS HAS CHANGED IN SPIGOT 1.3+!!!! THIS IS FOR THE NEW VERSION OF SPIGOT
+	 * IF YOU NEED A LEGACY BUILD, DOWNLOAD ONE FROM THE VERSION HISTORY ON SPIGOT
+	 * */
   public void onEnable() {
+	  //set the event handler for the crafting permissions
     getServer().getPluginManager().registerEvents(this, (Plugin)this);
+    //create the recipes
     addCustomSaddleRecipe();
     addCustomDiamondbardingRecipe();
     addCustomGoldBardingRecipe();
@@ -30,6 +36,9 @@ public class main extends JavaPlugin implements Listener {
     Bukkit.getServer().clearRecipes();
   }
   
+  /*
+   * This method checks if the player has permission and sends them a message on the craft event
+   * */
   @EventHandler(priority = EventPriority.HIGH)
   public void onCraftItem(CraftItemEvent e) {
     ItemStack item = e.getCurrentItem();
@@ -93,6 +102,7 @@ public class main extends JavaPlugin implements Listener {
       }  
   }
   
+  //create the saddle
   public void addCustomSaddleRecipe() {
     ItemStack item = new ItemStack(Material.SADDLE);
     NamespacedKey item_key = new NamespacedKey((Plugin)this, "saddle_key");
@@ -105,6 +115,7 @@ public class main extends JavaPlugin implements Listener {
     Bukkit.getServer().addRecipe((Recipe)itemRecipe);
   }
   
+  //create the name tag
   public void addCustomNametagRecipe() {
     ItemStack item = new ItemStack(Material.NAME_TAG);
     NamespacedKey item_key = new NamespacedKey((Plugin)this, "nametag_key");
@@ -117,6 +128,7 @@ public class main extends JavaPlugin implements Listener {
     Bukkit.getServer().addRecipe((Recipe)itemRecipe);
   }
   
+  //create the iron barding
   public void addCustomIronBardingRecipe() {
     ItemStack item = new ItemStack(Material.IRON_HORSE_ARMOR);
     NamespacedKey item_key = new NamespacedKey((Plugin)this, "iron_barding_key");
@@ -128,6 +140,7 @@ public class main extends JavaPlugin implements Listener {
     Bukkit.getServer().addRecipe((Recipe)itemRecipe);
   }
   
+  //create the gold barding
   public void addCustomGoldBardingRecipe() {
     ItemStack item = new ItemStack(Material.GOLDEN_HORSE_ARMOR);
     NamespacedKey item_key = new NamespacedKey((Plugin)this, "gold_barding__key");
@@ -139,6 +152,7 @@ public class main extends JavaPlugin implements Listener {
     Bukkit.getServer().addRecipe((Recipe)itemRecipe);
   }
   
+  //create the diamond barding
   public void addCustomDiamondbardingRecipe() {
     ItemStack item = new ItemStack(Material.DIAMOND_HORSE_ARMOR);
     NamespacedKey item_key = new NamespacedKey((Plugin)this, "diamond_barding_key");
