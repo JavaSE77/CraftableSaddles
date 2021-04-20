@@ -38,6 +38,9 @@ public class main extends JavaPlugin implements Listener {
   
   /*
    * This method checks if the player has permission and sends them a message on the craft event
+   * This version of the plugin does not register permissions as default. Older versions did. 
+   * This was changed due to a complaint. If you do not want to give user permissions, you are free
+   * to use an older version
    * */
   @EventHandler(priority = EventPriority.HIGH)
   public void onCraftItem(CraftItemEvent e) {
@@ -103,6 +106,10 @@ public class main extends JavaPlugin implements Listener {
   }
   
   //create the saddle
+  /**
+   * @author JavaSE
+   * Method adds saddle crafting;
+   * */
   public void addCustomSaddleRecipe() {
     ItemStack item = new ItemStack(Material.SADDLE);
     NamespacedKey item_key = new NamespacedKey((Plugin)this, "saddle_key");
@@ -116,6 +123,10 @@ public class main extends JavaPlugin implements Listener {
   }
   
   //create the name tag
+  /**
+   * @author JavaSE
+   * Method adds nametag crafting;
+   * */
   public void addCustomNametagRecipe() {
     ItemStack item = new ItemStack(Material.NAME_TAG);
     NamespacedKey item_key = new NamespacedKey((Plugin)this, "nametag_key");
@@ -129,6 +140,10 @@ public class main extends JavaPlugin implements Listener {
   }
   
   //create the iron barding
+  /**
+   * @author JavaSE
+   * Method adds horse armor crafting;
+   * */
   public void addCustomIronBardingRecipe() {
     ItemStack item = new ItemStack(Material.IRON_HORSE_ARMOR);
     NamespacedKey item_key = new NamespacedKey((Plugin)this, "iron_barding_key");
@@ -141,6 +156,10 @@ public class main extends JavaPlugin implements Listener {
   }
   
   //create the gold barding
+  /**
+   * @author JavaSE
+   * Method adds horse armor crafting;
+   * */
   public void addCustomGoldBardingRecipe() {
     ItemStack item = new ItemStack(Material.GOLDEN_HORSE_ARMOR);
     NamespacedKey item_key = new NamespacedKey((Plugin)this, "gold_barding__key");
@@ -153,6 +172,10 @@ public class main extends JavaPlugin implements Listener {
   }
   
   //create the diamond barding
+  /**
+   * @author JavaSE
+   * Method adds horse armor crafting;
+   * */
   public void addCustomDiamondbardingRecipe() {
     ItemStack item = new ItemStack(Material.DIAMOND_HORSE_ARMOR);
     NamespacedKey item_key = new NamespacedKey((Plugin)this, "diamond_barding_key");
